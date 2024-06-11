@@ -1,6 +1,4 @@
-/* Build a cohort chart for all customer of Electricity billing in 2017 */
-
--- Tinh so KH quay tro lai (retention rate) cua nhung KH trong thang 1
+/* Build a cohort chart for all customers of Electricity billing in the first month of 2017 */
 
 WITH table_first AS (
 SELECT customer_id, order_id, transaction_date,
@@ -28,7 +26,9 @@ SELECT *,
     CAST (retained_customers AS DECIMAL) / MAX (retained_customers) OVER () AS rate
 FROM table_retained;
 
--- Tinh so KH quay tro lai (retention rate) trong ca nam 2017
+
+
+/* Build a cohort chart for all customers of Electricity billing in 2017 */
 
 WITH table_first AS (
 SELECT customer_id, order_id, transaction_date,
